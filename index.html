@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptForge Studio | AI Prompt Enhancer Workbench</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h2>PromptForge</h2>
+            </div>
+            
+            <div class="control-group">
+                <label><i class="fa-solid fa-user-gear"></i> AI Persona / Role</label>
+                <select id="roleSelect">
+                    <option value="Senior Software Architect">Senior Software Architect</option>
+                    <option value="Expert Full-Stack Developer">Expert Full-Stack Developer</option>
+                    <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+                    <option value="UI/UX Design Lead">UI/UX Design Lead</option>
+                    <option value="Technical Writer & Researcher">Technical Writer & Researcher</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label><i class="fa-solid fa-sliders"></i> Tone & Style</label>
+                <select id="toneSelect">
+                    <option value="Professional & Concise">Professional & Concise</option>
+                    <option value="Detailed & Step-by-Step">Detailed & Step-by-Step</option>
+                    <option value="Casual & Direct">Casual & Direct</option>
+                    <option value="Academic & Rigorous">Academic & Rigorous</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label><i class="fa-solid fa-bullseye"></i> Target Output Format</label>
+                <select id="formatSelect">
+                    <option value="Markdown with Code Blocks">Markdown with Code Blocks</option>
+                    <option value="Bullet Points & Summary">Bullet Points & Summary</option>
+                    <option value="Step-by-Step Implementation Guide">Step-by-Step Implementation Guide</option>
+                    <option value="Comparative Table Format">Comparative Table Format</option>
+                </select>
+            </div>
+
+            <button id="enhanceBtn" class="btn primary-btn">
+                <i class="fa-solid fa-bolt"></i> Forge Enhanced Prompt
+            </button>
+            <button id="clearBtn" class="btn secondary-btn">
+                <i class="fa-solid fa-rotate-right"></i> Reset Workbench
+            </button>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header class="top-bar">
+                <h1>AI Prompt Format & Enhancer Workbench</h1>
+                <p>Structure your raw thoughts into high-performance prompts for LLMs.</p>
+            </header>
+
+            <div class="editors-grid">
+                <!-- Raw Input Box -->
+                <div class="editor-panel">
+                    <div class="panel-header">
+                        <span><i class="fa-regular fa-pen-to-square"></i> Raw User Prompt</span>
+                        <span id="charCount" class="counter">0 chars</span>
+                    </div>
+                    <textarea id="rawInput" placeholder="Type or paste your raw prompt here... (e.g., 'Write a login form in HTML and CSS with validation')"></textarea>
+                </div>
+
+                <!-- Enhanced Output Box -->
+                <div class="editor-panel">
+                    <div class="panel-header">
+                        <span><i class="fa-solid fa-wand-magic"></i> Structured Master Prompt</span>
+                        <button id="copyBtn" class="copy-action-btn"><i class="fa-regular fa-copy"></i> Copy Output</button>
+                    </div>
+                    <textarea id="enhancedOutput" readonly placeholder="Your structured and optimized master prompt will appear here..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Prompt copied to clipboard successfully!</div>
+
+    <script src="script.live.js"></script>
+</body>
+</html>
